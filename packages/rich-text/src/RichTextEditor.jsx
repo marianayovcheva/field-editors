@@ -251,34 +251,37 @@ export default function RichTextEditor(props) {
   /* eslint-disable react/prop-types */
   const { sdk, isInitiallyDisabled, ...otherProps } = props;
   return (
-    <EntityProvider sdk={sdk}>
-      <FieldConnector
-        throttle={0}
-        field={sdk.field}
-        isInitiallyDisabled={isInitiallyDisabled}
-        isEmptyValue={(value) => {
-          return !value || deepEquals(value, EMPTY_DOCUMENT);
-        }}
-        isEqualValues={(value1, value2) => {
-          return deepEquals(value1, value2);
-        }}>
-        {({ lastRemoteValue, disabled, setValue, externalReset }) => {
-          return (
-            <ConnectedRichTextEditor
-              {...otherProps}
-              // on external change reset component completely and init with initial value again
-              key={`rich-text-editor-${externalReset}`}
-              value={lastRemoteValue}
-              sdk={sdk}
-              isDisabled={disabled}
-              onChange={(value) => {
-                setValue(value);
-              }}
-            />
-          );
-        }}
-      </FieldConnector>
-    </EntityProvider>
+    <>
+      Test
+      <EntityProvider sdk={sdk}>
+        <FieldConnector
+          throttle={0}
+          field={sdk.field}
+          isInitiallyDisabled={isInitiallyDisabled}
+          isEmptyValue={(value) => {
+            return !value || deepEquals(value, EMPTY_DOCUMENT);
+          }}
+          isEqualValues={(value1, value2) => {
+            return deepEquals(value1, value2);
+          }}>
+          {({ lastRemoteValue, disabled, setValue, externalReset }) => {
+            return (
+              <ConnectedRichTextEditor
+                {...otherProps}
+                // on external change reset component completely and init with initial value again
+                key={`rich-text-editor-${externalReset}`}
+                value={lastRemoteValue}
+                sdk={sdk}
+                isDisabled={disabled}
+                onChange={(value) => {
+                  setValue(value);
+                }}
+              />
+            );
+          }}
+        </FieldConnector>
+      </EntityProvider>
+    </>
   );
 }
 
