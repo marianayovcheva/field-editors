@@ -2116,6 +2116,25 @@
     moment "^2.20.0"
     react-sortable-hoc "^2.0.0"
 
+"@contentful/field-editor-reference@github:marianayovcheva/field-editors#contentful-field-editor-reference-v4.2.0-gitpkg":
+  version "4.2.0"
+  resolved "https://codeload.github.com/marianayovcheva/field-editors/tar.gz/28b9318e6505a3bbc5a39d5403e9b0357248c33c"
+  dependencies:
+    "@contentful/f36-components" "^4.0.27"
+    "@contentful/f36-icons" "^4.1.0"
+    "@contentful/f36-tokens" "^4.0.0"
+    "@contentful/field-editor-shared" "^1.1.2"
+    "@contentful/mimetype" "^1.4.0"
+    "@types/deep-equal" "^1.0.1"
+    array-move "^3.0.0"
+    constate "3.2.0"
+    deep-equal "2.0.5"
+    emotion "^10.0.17"
+    lodash "^4.17.15"
+    lodash-es "^4.17.15"
+    moment "^2.20.0"
+    react-sortable-hoc "^2.0.0"
+
 "@contentful/field-editor-rich-text@^0.19.19":
   version "0.19.20"
   resolved "https://registry.yarnpkg.com/@contentful/field-editor-rich-text/-/field-editor-rich-text-0.19.20.tgz#35fc873fb1e1d2ee26cb20ddb7b9313727331da5"
