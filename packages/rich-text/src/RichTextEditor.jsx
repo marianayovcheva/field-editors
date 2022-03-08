@@ -9,7 +9,7 @@ import deepEquals from 'fast-deep-equal';
 
 import { BLOCKS, EMPTY_DOCUMENT } from '@contentful/rich-text-types';
 import { toContentfulDocument, toSlatejsDocument } from '@contentful/contentful-slatejs-adapter';
-import { EntityProvider } from '@contentful/field-editor-reference';
+import { EntityProvider } from '@marianayovcheva/field-editor-reference';
 
 import schema from './constants/Schema';
 import { createRichTextAPI } from './plugins/shared/PluginApi';

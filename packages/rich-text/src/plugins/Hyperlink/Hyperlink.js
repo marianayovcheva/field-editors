@@ -5,7 +5,7 @@ import isHotKey from 'is-hotkey';
 import styles from './styles';
 import { SUPPORTS_NATIVE_SLATE_HYPERLINKS } from '../../helpers/browserSupport';
 import { useRequestStatus } from './useRequestStatus';
-import { getScheduleTooltipContent } from '@contentful/field-editor-reference';
+import { getScheduleTooltipContent } from '@marianayovcheva/field-editor-reference';
 import { truncate } from './truncate';
 
 import { TextLink, Tooltip } from '@contentful/f36-components';

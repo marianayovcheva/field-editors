@@ -2,7 +2,7 @@ import React from 'react';
 import { css } from 'emotion';
 import PropTypes from 'prop-types';
 import tokens from '@contentful/f36-tokens';
-import { EntityProvider } from '@contentful/field-editor-reference';
+import { EntityProvider } from '@marianayovcheva/field-editor-reference';
 import { FetchingWrappedEntryCard } from '../../plugins/EmbeddedEntityBlock/FetchingWrappedEntryCard';
 import { FetchingWrappedAssetCard } from '../../plugins/EmbeddedEntityBlock/FetchingWrappedAssetCard';
 

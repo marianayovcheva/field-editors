@@ -4,7 +4,7 @@ import { css } from 'emotion';
 import tokens from '@contentful/f36-tokens';
 import { InlineEntryCard, MenuItem, Text } from '@contentful/f36-components';
 import { entityHelpers } from '@contentful/field-editor-shared';
-import { useEntities, ScheduledIconWithTooltip } from '@contentful/field-editor-reference';
+import { useEntities, ScheduledIconWithTooltip } from '@marianayovcheva/field-editor-reference';
 
 import { INLINES } from '@contentful/rich-text-types';
 
