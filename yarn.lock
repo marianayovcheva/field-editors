@@ -3628,6 +3628,25 @@
   resolved "https://registry.yarnpkg.com/@mapbox/point-geometry/-/point-geometry-0.1.0.tgz#8a83f9335c7860effa2eeeca254332aa0aeed8f2"
   integrity sha1-ioP5M1x4YO/6Lu7KJUMyqgru2PI=
 
+"@marianayovcheva/field-editor-reference@github:marianayovcheva/field-editors#contentful-field-editor-reference-v4.2.0-gitpkg":
+  version "4.2.0"
+  resolved "https://codeload.github.com/marianayovcheva/field-editors/tar.gz/28b9318e6505a3bbc5a39d5403e9b0357248c33c"
+  dependencies:
+    "@contentful/f36-components" "^4.0.27"
+    "@contentful/f36-icons" "^4.1.0"
+    "@contentful/f36-tokens" "^4.0.0"
+    "@contentful/field-editor-shared" "^1.1.2"
+    "@contentful/mimetype" "^1.4.0"
+    "@types/deep-equal" "^1.0.1"
+    array-move "^3.0.0"
+    constate "3.2.0"
+    deep-equal "2.0.5"
+    emotion "^10.0.17"
+    lodash "^4.17.15"
+    lodash-es "^4.17.15"
+    moment "^2.20.0"
+    react-sortable-hoc "^2.0.0"
+
 "@mdx-js/loader@^1.0.18":
   version "1.5.7"
   resolved "https://registry.yarnpkg.com/@mdx-js/loader/-/loader-1.5.7.tgz#7e3ac1cecbf085f2d23ee5aa3431f338fb67fe3b"

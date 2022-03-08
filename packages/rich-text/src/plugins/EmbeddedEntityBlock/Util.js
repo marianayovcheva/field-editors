@@ -16,7 +16,7 @@ export const hasBlockOfType = (editor, type) => {
 /**
  * Invokes entity selector modal and inserts block embed.
  * @param {string} nodeType
- * @param {import('@contentful/field-editor-reference/dist/types').FieldExtensionSDK} sdk
+ * @param {import('@marianayovcheva/field-editor-reference/dist/types').FieldExtensionSDK} sdk
  * @param {slate.Editor} editor
  * @param {function} logAction
  */

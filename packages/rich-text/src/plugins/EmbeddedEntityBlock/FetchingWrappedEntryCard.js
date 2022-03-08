@@ -5,7 +5,7 @@ import {
   useEntities,
   MissingEntityCard,
   WrappedEntryCard,
-} from '@contentful/field-editor-reference';
+} from '@marianayovcheva/field-editor-reference';
 
 export function FetchingWrappedEntryCard(props) {
   const { getOrLoadEntry, loadEntityScheduledActions, entries } = useEntities();
