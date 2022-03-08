@@ -36,7 +36,7 @@ export const hasOnlyInlineEntryInSelection = (editor) => {
 
 /**
  * Invokes entity selector modal and inserts inline embed.
- * @param {import('@marianayovcheva/field-editor-reference/dist/types').FieldExtensionSDK} sdk
+ * @param {import('@contentful/field-editor-reference/dist/types').FieldExtensionSDK} sdk
  * @param {slate.Editor} editor
  * @param {function} logAction
  */
