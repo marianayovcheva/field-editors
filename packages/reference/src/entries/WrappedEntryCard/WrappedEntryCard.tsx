@@ -169,8 +169,9 @@ export function WrappedEntryCard(props: WrappedEntryCardProps) {
         if (!props.isClickable) return;
         if (props.onClick) return props.onClick(e);
         props.onEdit && props.onEdit();
-      }}
-    />
+      }}>
+      Test card content
+    </EntryCard>
   );
 }
 
