@@ -1,0 +1,58 @@
+{
+  "name": "@contentful/field-editor-reference",
+  "version": "4.2.3",
+  "main": "dist/index.js",
+  "module": "dist/field-editor-reference.esm.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "author": "Contentful GmbH",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/contentful/field-editors"
+  },
+  "scripts": {
+    "watch": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom --watch",
+    "test:ci": "tsdx test --env=jsdom --ci",
+    "tsc": "tsc -p ./ --noEmit"
+  },
+  "dependencies": {
+    "@contentful/f36-components": "^4.0.27",
+    "@contentful/f36-icons": "^4.1.0",
+    "@contentful/f36-tokens": "^4.0.0",
+    "@contentful/field-editor-shared": "^1.1.2",
+    "@contentful/mimetype": "^1.4.0",
+    "@types/deep-equal": "^1.0.1",
+    "array-move": "^3.0.0",
+    "constate": "3.2.0",
+    "deep-equal": "2.0.5",
+    "emotion": "^10.0.17",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
+    "moment": "^2.20.0",
+    "react-sortable-hoc": "^2.0.0"
+  },
+  "devDependencies": {
+    "@contentful/app-sdk": "^4.2.0",
+    "@contentful/field-editor-test-utils": "^1.1.2",
+    "@testing-library/react-hooks": "^5.0.3"
+  },
+  "peerDependencies": {
+    "@contentful/app-sdk": "^4.2.0",
+    "react": ">=16.8.0"
+  },
+  "jest": {
+    "testMatch": [
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "diagnostics": false
+      }
+    }
+  }
+}
