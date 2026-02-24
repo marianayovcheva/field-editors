@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.9.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-boolean@1.8.4...@contentful/field-editor-boolean@1.9.0) (2026-02-24)
+
+### Features
+
+- **boolean:** add translation fn [UFO-2136] ([#2083](https://github.com/contentful/field-editors/issues/2083)) ([353f4b8](https://github.com/contentful/field-editors/commit/353f4b881c5333ad5394f84388c124eb8a51c40c))
+
 ## [1.8.4](https://github.com/contentful/field-editors/compare/@contentful/field-editor-boolean@1.8.3...@contentful/field-editor-boolean@1.8.4) (2026-02-23)
 
 **Note:** Version bump only for package @contentful/field-editor-boolean
