@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.10.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-boolean@1.9.0...@contentful/field-editor-boolean@1.10.0) (2026-02-25)
+
+### Features
+
+- **boolean:** add translation fn ([#2084](https://github.com/contentful/field-editors/issues/2084)) ([87f0c2d](https://github.com/contentful/field-editors/commit/87f0c2dec5ec658f9adddc0dd0a0c3d6f23d2369))
+
 # [1.9.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-boolean@1.8.4...@contentful/field-editor-boolean@1.9.0) (2026-02-24)
 
 ### Features
