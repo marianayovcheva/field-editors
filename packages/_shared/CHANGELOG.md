@@ -3,6 +3,30 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@2.18.1...@contentful/field-editor-shared@3.0.0) (2026-03-16)
+
+### Features
+
+- **shared:** bump forma packages to v6 [TOL-3884] ([#2100](https://github.com/contentful/field-editors/issues/2100)) ([fad86f3](https://github.com/contentful/field-editors/commit/fad86f33fefc530c8732984fa3fa51f5e2b06aec))
+
+### BREAKING CHANGES
+
+- **shared:** bump also babel-preset-react-app, emotion and peerDependencies.
+
+- build: ensure always using the public yarn registry
+
+- build: fix .npmrc
+
+- fix: revert .npmrc
+
+- chore: restore emotion dependency until migration is complete
+
+- chore: reset root package.json
+
+- build: streamline yarn_install command by moving secret retrieval and npm configuration
+
+- chore: update yarn.lock
+
 ## [2.18.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@2.18.0...@contentful/field-editor-shared@2.18.1) (2026-02-23)
 
 ### Bug Fixes
