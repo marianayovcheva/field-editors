@@ -1,4 +1,11 @@
-import { renderMarkdownEditor, type, clearAll, checkValue, selectCharsBackwards } from './utils';
+import {
+  renderMarkdownEditor,
+  type,
+  checkValue,
+  selectCharsBackwards,
+  clickVisibleButtonByName,
+  openAdditionalActions,
+} from './utils';
 
 describe('Markdown Editor / Simple Actions', () => {
   const selectors = {
@@ -24,7 +31,7 @@ describe('Markdown Editor / Simple Actions', () => {
       return cy.findByRole('button', { name: 'Ordered list' });
     },
     getToggleAdditionalActionsButton: () => {
-      return cy.findByTestId('markdown-action-button-toggle-additional');
+      return cy.findByRole('button', { name: 'More actions' });
     },
     getStrikeButton: () => {
       return cy.findByRole('button', { name: 'Strike out' });
@@ -49,16 +56,16 @@ describe('Markdown Editor / Simple Actions', () => {
   };
 
   const unveilAdditionalButtonsRow = () => {
-    selectors.getToggleAdditionalActionsButton().click();
+    openAdditionalActions().should('be.visible');
   };
 
   describe('headings', () => {
     const clickHeading = (value) => {
-      selectors.getHeadingsSelectorButton().click({ force: true });
+      selectors.getHeadingsSelectorButton().click();
       selectors.getHeadingButton(value).click();
     };
 
-    it('should work properly', () => {
+    it('should insert heading prefixes', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
       clickHeading('1');
@@ -72,22 +79,29 @@ describe('Markdown Editor / Simple Actions', () => {
       clickHeading('3');
       checkValue('### ');
       cy.get('.cm-header-3').should('have.text', '### ');
+    });
 
+    it('should keep heading formatting while typing', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
+
+      clickHeading('3');
       type('Heading 3{enter}');
 
       checkValue('### Heading 3\n');
       cy.get('.cm-header-3').should('have.text', '### Heading 3');
+    });
 
-      type('Future heading 2');
+    it('should toggle headings on existing text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
+
+      type('### Heading 3{enter}Future heading 2');
       clickHeading('2');
       checkValue('### Heading 3\n## Future heading 2');
 
       clickHeading('2');
       checkValue('### Heading 3\nFuture heading 2');
 
-      type('{enter}{enter}');
-      type(examples.long);
-
+      type('{enter}{enter}' + examples.long);
       clickHeading('3');
       checkValue(`### Heading 3\nFuture heading 2\n\n### ${examples.long}`);
     });
@@ -95,10 +109,10 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('bold', () => {
     const clickBold = () => {
-      selectors.getBoldButton().click();
+      clickVisibleButtonByName('Bold');
     };
 
-    it('should work properly', () => {
+    it('should wrap new text in bold markers', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
       clickBold();
@@ -106,10 +120,12 @@ describe('Markdown Editor / Simple Actions', () => {
 
       type('bold text');
       checkValue('__bold text__');
+    });
 
-      type('{rightarrow}{rightarrow}{enter}');
+    it('should apply bold formatting to selected text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
-      type('Sentence a bold word.');
+      type('__bold text__{rightarrow}{rightarrow}{enter}Sentence a bold word.');
       selectCharsBackwards(1, 9);
 
       clickBold();
@@ -136,10 +152,10 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('italic', () => {
     const clickItalic = () => {
-      selectors.getItalicButton().click();
+      clickVisibleButtonByName('Italic');
     };
 
-    it('should work properly', () => {
+    it('should wrap new text in italic markers', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
       clickItalic();
@@ -147,11 +163,12 @@ describe('Markdown Editor / Simple Actions', () => {
 
       type('italic text');
       checkValue('*italic text*');
+    });
 
-      type('{rightarrow}{rightarrow}{enter}');
+    it('should apply italic formatting to selected text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
-      type('Sentence an italic word.');
-
+      type('*italic text*{rightarrow}{rightarrow}{enter}Sentence an italic word.');
       selectCharsBackwards(1, 11);
       clickItalic();
 
@@ -178,21 +195,21 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('quote', () => {
     const clickQuote = () => {
-      selectors.getQuoteButton().click();
+      clickVisibleButtonByName('Quote');
     };
 
-    it('should work properly', () => {
-      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
+    it('should prefix new lines as a quote', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
       clickQuote();
       checkValue('> ');
 
-      type('some really smart wisdom');
-      type('{enter}');
-      type('by some really smart person');
+      type('some really smart wisdom{enter}by some really smart person');
       checkValue('> some really smart wisdom\n> by some really smart person');
+    });
 
-      clearAll();
+    it('should toggle quote formatting on existing text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
       type(examples.long);
 
@@ -206,23 +223,24 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('code', () => {
     const clickCode = () => {
-      selectors.getCodeButton().click();
+      clickVisibleButtonByName('Code block');
     };
 
-    it('should work properly', () => {
-      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
+    it('should indent new lines as code', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
       unveilAdditionalButtonsRow();
       clickCode();
-      type('var i = 0;');
-      type('{enter}');
-      type('i++;');
+      type('var i = 0;{enter}i++;');
       checkValue('    var i = 0;\n    i++;');
+    });
 
-      clearAll();
+    it('should toggle existing text as code', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
       type(examples.code);
 
+      unveilAdditionalButtonsRow();
       clickCode();
       checkValue(`    ${examples.code}`);
 
@@ -233,10 +251,10 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('strike', () => {
     const clickStrike = () => {
-      selectors.getStrikeButton().click();
+      clickVisibleButtonByName('Strike out');
     };
 
-    it('should work properly', () => {
+    it('should wrap new text in strike markers', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
       unveilAdditionalButtonsRow();
@@ -245,10 +263,13 @@ describe('Markdown Editor / Simple Actions', () => {
 
       type('striked text');
       checkValue('~~striked text~~');
+    });
 
-      type('{rightarrow}{rightarrow}{enter}');
+    it('should apply strike formatting to selected text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true });
 
-      type('Sentence a striked out word.');
+      unveilAdditionalButtonsRow();
+      type('~~striked text~~{rightarrow}{rightarrow}{enter}Sentence a striked out word.');
       selectCharsBackwards(1, 16);
       clickStrike();
       type(' and not a striked out word');
@@ -273,27 +294,28 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('unordered list', () => {
     const clickUnorderedList = () => {
-      selectors.getUnorderedListButton().click();
+      clickVisibleButtonByName('Unordered list');
     };
 
-    it('should work properly', () => {
+    it('should create a list from new lines', () => {
       renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       clickUnorderedList();
-      type('first item');
-      type('{enter}');
-      type('second item');
-      type('{enter}{enter}');
+      type('first item{enter}second item{enter}{enter}');
       checkValue('- first item\n- second item\n');
+    });
 
-      clearAll();
+    it('should create a list after existing text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       type('sentence at the very beginning.');
       clickUnorderedList();
       type('first item{enter}second item');
       checkValue('sentence at the very beginning.\n\n- first item\n- second item\n');
+    });
 
-      clearAll();
+    it('should toggle unordered list items off and on', () => {
+      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       type('- first item');
       clickUnorderedList();
@@ -311,9 +333,7 @@ describe('Markdown Editor / Simple Actions', () => {
     it('should work properly with selection', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
-      type('first item{enter}');
-      type('second item{enter}');
-      type('third item');
+      type('first item{enter}second item{enter}third item');
 
       type('{selectall}{selectall}');
       clickUnorderedList();
@@ -323,27 +343,28 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('ordered list', () => {
     const clickOrderedList = () => {
-      selectors.getOrderedListButton().click();
+      clickVisibleButtonByName('Ordered list');
     };
 
-    it('should work properly', () => {
+    it('should create an ordered list from new lines', () => {
       renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       clickOrderedList();
-      type('first item');
-      type('{enter}');
-      type('second item');
-      type('{enter}{enter}');
+      type('first item{enter}second item{enter}{enter}');
       checkValue('1. first item\n2. second item\n');
+    });
 
-      clearAll();
+    it('should create an ordered list after existing text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       type('sentence at the very beginning.');
       clickOrderedList();
       type('first item{enter}second item');
       checkValue('sentence at the very beginning.\n\n1. first item\n2. second item\n');
+    });
 
-      clearAll();
+    it('should toggle ordered list items off and on', () => {
+      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       type('1. first item');
       clickOrderedList();
@@ -361,9 +382,7 @@ describe('Markdown Editor / Simple Actions', () => {
     it('should work properly with selection', () => {
       renderMarkdownEditor({ spyOnSetValue: true });
 
-      type('first item{enter}');
-      type('second item{enter}');
-      type('third item');
+      type('first item{enter}second item{enter}third item');
 
       type('{selectall}{selectall}');
       clickOrderedList();
@@ -374,10 +393,10 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('horizontal line', () => {
     const clickHorizontalButton = () => {
-      selectors.getHorizontalLineButton().click();
+      clickVisibleButtonByName('Horizontal rule');
     };
 
-    it('should work properly', () => {
+    it('should insert horizontal rules', () => {
       renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       unveilAdditionalButtonsRow();
@@ -386,10 +405,13 @@ describe('Markdown Editor / Simple Actions', () => {
 
       clickHorizontalButton();
       checkValue('\n---\n\n---\n');
+    });
 
-      clearAll();
+    it('should insert a horizontal rule after text', () => {
+      renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
 
       type('something');
+      unveilAdditionalButtonsRow();
       clickHorizontalButton();
       checkValue('something\n\n---\n');
     });
@@ -397,11 +419,11 @@ describe('Markdown Editor / Simple Actions', () => {
 
   describe('indent and dedent', () => {
     const clickIndentButton = () => {
-      selectors.getIndentButton().click();
+      clickVisibleButtonByName('Increase indentation');
     };
 
     const clickDedentButton = () => {
-      selectors.getDedentButton().click();
+      clickVisibleButtonByName('Decrease indentation');
     };
 
     it('should work properly', () => {

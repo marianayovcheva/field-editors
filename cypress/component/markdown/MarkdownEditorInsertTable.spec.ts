@@ -1,4 +1,9 @@
-import { checkValue, clearAll, renderMarkdownEditor } from './utils';
+import {
+  checkValue,
+  renderMarkdownEditor,
+  clickVisibleButtonByName,
+  openAdditionalActions,
+} from './utils';
 
 describe('Markdown Editor / Insert Table Dialog', () => {
   const selectors = {
@@ -6,10 +11,16 @@ describe('Markdown Editor / Insert Table Dialog', () => {
       return cy.findByTestId('dialog-title').find('h2');
     },
     getToggleAdditionalActionsButton: () => {
-      return cy.findByTestId('markdown-action-button-toggle-additional');
+      return cy.findByRole('button', { name: 'More actions' });
+    },
+    openAdditionalActions() {
+      return openAdditionalActions();
     },
     getInsertTableButton() {
       return cy.findByRole('button', { name: 'Insert table' });
+    },
+    openInsertTableDialog() {
+      return clickVisibleButtonByName('Insert table');
     },
     getModalContent() {
       return cy.findByTestId('insert-table-modal');
@@ -30,26 +41,25 @@ describe('Markdown Editor / Insert Table Dialog', () => {
     },
   };
 
-  it('should have correct title', () => {
-    renderMarkdownEditor();
+  beforeEach(() => {
+    renderMarkdownEditor({ spyOnSetValue: true });
+    selectors.openAdditionalActions().should('be.visible');
+  });
 
-    selectors.getToggleAdditionalActionsButton().click();
-    selectors.getInsertTableButton().click({ force: true });
+  it('should have correct title', () => {
+    selectors.openInsertTableDialog();
     selectors.getDialogTitle().should('have.text', 'Insert table');
     selectors.getCancelButton().click();
   });
 
   it('should insert nothing if click on cancel button or close window with ESC', () => {
-    renderMarkdownEditor({ spyOnSetValue: true });
-    selectors.getToggleAdditionalActionsButton().click();
-
     // close with button
-    selectors.getInsertTableButton().click({ force: true });
+    selectors.openInsertTableDialog();
     selectors.getCancelButton().click();
     selectors.getModalContent().should('not.exist');
 
     // close with esc
-    selectors.getInsertTableButton().click();
+    selectors.openInsertTableDialog();
     selectors.inputs.getRowsInput().type('{esc}');
     selectors.getModalContent().should('not.exist');
 
@@ -57,10 +67,7 @@ describe('Markdown Editor / Insert Table Dialog', () => {
   });
 
   it('should have a correct default state', () => {
-    renderMarkdownEditor();
-
-    selectors.getToggleAdditionalActionsButton().click();
-    selectors.getInsertTableButton().click({ force: true });
+    selectors.openInsertTableDialog();
 
     selectors.inputs.getRowsInput().should('have.value', '2');
     selectors.inputs.getColsInput().should('have.value', '1');
@@ -70,10 +77,7 @@ describe('Markdown Editor / Insert Table Dialog', () => {
   });
 
   it('should validate incorrect values', () => {
-    renderMarkdownEditor();
-
-    selectors.getToggleAdditionalActionsButton().click();
-    selectors.getInsertTableButton().click({ force: true });
+    selectors.openInsertTableDialog();
 
     selectors.inputs.getRowsInput().focus().type('{selectall}').type('1');
 
@@ -87,22 +91,19 @@ describe('Markdown Editor / Insert Table Dialog', () => {
     selectors.getCancelButton().click();
   });
 
-  it('should insert table with correct number rows and cols', () => {
-    renderMarkdownEditor({ spyOnRemoveValue: true, spyOnSetValue: true });
-    selectors.getToggleAdditionalActionsButton().click();
-
-    selectors.getInsertTableButton().click({ force: true });
+  it('should insert table with default number of rows and cols', () => {
+    selectors.openInsertTableDialog();
     selectors.getConfirmButton().click();
     checkValue('\n| Header     |\n| ---------- |\n| Cell       |\n| Cell       |\n');
+  });
 
-    clearAll();
-
-    selectors.getInsertTableButton().click();
+  it('should insert table with custom number of rows and cols', () => {
+    selectors.openInsertTableDialog();
     selectors.inputs.getRowsInput().focus().type('{selectall}').type('3');
     selectors.inputs.getColsInput().focus().type('{selectall}').type('2');
     selectors.getConfirmButton().click();
     checkValue(
-      '\n| Header     | Header     |\n| ---------- | ---------- |\n| Cell       | Cell       |\n| Cell       | Cell       |\n| Cell       | Cell       |\n'
+      '\n| Header     | Header     |\n| ---------- | ---------- |\n| Cell       | Cell       |\n| Cell       | Cell       |\n| Cell       | Cell       |\n',
     );
   });
 });

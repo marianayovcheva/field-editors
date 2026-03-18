@@ -1,65 +1,72 @@
-import { checkValue, renderMarkdownEditor } from './utils';
+import { checkValue, renderMarkdownEditor, clickToolbarButton } from './utils';
 
 describe('Markdown Editor / Insert Special Character Dialog', () => {
   const selectors = {
-    getInput: () => {
-      return cy.findByTestId('markdown-textarea').find('[contenteditable]');
-    },
     getDialogTitle() {
-      return cy.findByTestId('dialog-title').find('h2');
-    },
-    getToggleAdditionalActionsButton: () => {
-      return cy.findByTestId('markdown-action-button-toggle-additional');
+      return cy.findAllByTestId('dialog-title').last().find('h2');
     },
     getModalContent() {
-      return cy.findByTestId('insert-special-character-modal');
+      return cy.findAllByTestId('insert-special-character-modal').last();
     },
-    getInsertCharacterButton() {
-      return cy.findByRole('button', { name: 'Insert special character' });
+    queryModalContent() {
+      return cy.get('body').find('[data-test-id="insert-special-character-modal"]');
     },
     getConfirmButton() {
-      return cy.findByRole('button', { name: 'Insert selected' });
+      return cy.findAllByTestId('insert-character-confirm').last();
     },
     getCancelButton() {
-      return cy.findByRole('button', { name: 'Cancel' });
+      return cy.findAllByTestId('insert-character-cancel').last();
     },
     getSpecialCharacterButtons() {
-      return cy.findAllByTestId('special-character-button');
+      return selectors.getModalContent().findAllByTestId('special-character-button');
     },
     getCharButton(char: string) {
-      return cy.findByText(char);
+      return selectors
+        .getSpecialCharacterButtons()
+        .filter((_, element) => element.textContent?.trim() === char)
+        .last();
+    },
+    getSelectedCharPreview() {
+      return selectors.getModalContent().findAllByTestId('cf-ui-text').first();
     },
   };
 
   beforeEach(() => {
     renderMarkdownEditor({ spyOnSetValue: true });
-    selectors.getToggleAdditionalActionsButton().click();
+    cy.get('body').then(($body) => {
+      if ($body.find('[data-test-id="insert-special-character-modal"]').length > 0) {
+        selectors.getCancelButton().click();
+        selectors.queryModalContent().should('not.exist');
+      }
+    });
+    clickToolbarButton('markdown-action-button-toggle-additional');
+    openDialog();
   });
 
   function openDialog() {
-    // we need to force the click here as a tooltip covers it
-    selectors.getInsertCharacterButton().click({ force: true });
+    clickToolbarButton('markdown-action-button-special');
   }
 
   function insertSpecialCharacter(char: string) {
     selectors.getCharButton(char).click();
+    selectors.getCharButton(char).should('have.class', 'css-l8bxk9');
+    selectors.getSelectedCharPreview().should('have.text', char);
     selectors.getConfirmButton().click();
   }
 
   it('should have correct title', () => {
-    openDialog();
     selectors.getDialogTitle().should('have.text', 'Insert special character');
     selectors.getCancelButton().click();
+    selectors.queryModalContent().should('not.exist');
   });
 
   it('should insert first charter by default', () => {
-    openDialog();
     selectors.getConfirmButton().click();
+    selectors.queryModalContent().should('not.exist');
     checkValue('´');
   });
 
   it('should include any selected character', () => {
-    openDialog();
     selectors.getSpecialCharacterButtons().should('have.length', 54);
     insertSpecialCharacter('¼');
 
@@ -69,8 +76,8 @@ describe('Markdown Editor / Insert Special Character Dialog', () => {
   });
 
   it('should include nothing if dialog was just closed', () => {
-    openDialog();
     selectors.getCancelButton().click();
+    selectors.queryModalContent().should('not.exist');
     cy.get('@setValue').should('not.be.called');
   });
 });

@@ -1,4 +1,9 @@
-import { checkValue, clearAll, renderMarkdownEditor } from './utils';
+import {
+  checkValue,
+  renderMarkdownEditor,
+  clickVisibleButtonByName,
+  openAdditionalActions,
+} from './utils';
 
 describe('Markdown Editor / Embed External Dialog', () => {
   const selectors = {
@@ -6,7 +11,7 @@ describe('Markdown Editor / Embed External Dialog', () => {
       return cy.findByTestId('dialog-title').find('h2');
     },
     getToggleAdditionalActionsButton: () => {
-      return cy.findByTestId('markdown-action-button-toggle-additional');
+      return cy.findByRole('button', { name: 'More actions' });
     },
     getModalContent() {
       return cy.findByTestId('embed-external-dialog');
@@ -37,22 +42,21 @@ describe('Markdown Editor / Embed External Dialog', () => {
   };
 
   function openDialog() {
-    selectors.getEmbedExternalContentButton().click();
+    clickVisibleButtonByName('Embed external content');
   }
 
-  it('should have correct title', () => {
-    renderMarkdownEditor();
-    selectors.getToggleAdditionalActionsButton().click();
+  beforeEach(() => {
+    renderMarkdownEditor({ spyOnSetValue: true });
+    openAdditionalActions().should('be.visible');
+  });
 
+  it('should have correct title', () => {
     openDialog();
     selectors.getDialogTitle().should('have.text', 'Embed external content');
     selectors.getCancelButton().click();
   });
 
   it('should have correct default state', () => {
-    renderMarkdownEditor();
-    selectors.getToggleAdditionalActionsButton().click();
-
     openDialog();
 
     selectors.inputs.getUrlInput().should('have.value', 'https://');
@@ -63,20 +67,17 @@ describe('Markdown Editor / Embed External Dialog', () => {
     selectors.getCancelButton().click();
   });
 
-  it('should insert a correct embedly script', () => {
-    renderMarkdownEditor({ spyOnSetValue: true, spyOnRemoveValue: true });
-    selectors.getToggleAdditionalActionsButton().click();
-
+  it('should insert a correct embedly script with percentage width', () => {
     openDialog();
     selectors.inputs.getUrlInput().clear().type('https://contentful.com');
     selectors.getConfirmButton().click();
     selectors.getModalContent().should('not.exist');
     checkValue(
-      `<a href="https://contentful.com" class="embedly-card" data-card-width="100%" data-card-controls="0">Embedded content: https://contentful.com</a>`
+      `<a href="https://contentful.com" class="embedly-card" data-card-width="100%" data-card-controls="0">Embedded content: https://contentful.com</a>`,
     );
+  });
 
-    clearAll();
-
+  it('should insert a correct embedly script with pixel width', () => {
     openDialog();
     selectors.inputs.getUrlInput().clear().type('https://contentful.com');
     selectors.inputs.getPixelRadio().click();
@@ -84,7 +85,7 @@ describe('Markdown Editor / Embed External Dialog', () => {
     selectors.getConfirmButton().click();
     selectors.getModalContent().should('not.exist');
     checkValue(
-      `<a href="https://contentful.com" class="embedly-card" data-card-width="500px" data-card-controls="0">Embedded content: https://contentful.com</a>`
+      `<a href="https://contentful.com" class="embedly-card" data-card-width="500px" data-card-controls="0">Embedded content: https://contentful.com</a>`,
     );
   });
 });
