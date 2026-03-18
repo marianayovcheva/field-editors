@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-list@1.7.5...@contentful/field-editor-list@2.0.0) (2026-03-18)
+
+### chore
+
+- **default-field-editors:** bump forma packages to v6 [TOL-3884] ([#2104](https://github.com/contentful/field-editors/issues/2104)) ([42fffe3](https://github.com/contentful/field-editors/commit/42fffe32557dd2177790972614c2f515e152e0f9))
+
+### BREAKING CHANGES
+
+- **default-field-editors:** Migrate from `emotion@10.` to `emotion/css@^11.13.5`. Consumers also must be on Forma 36 v6 and React 18.3.1+
+
 ## [1.7.5](https://github.com/contentful/field-editors/compare/@contentful/field-editor-list@1.7.4...@contentful/field-editor-list@1.7.5) (2026-03-16)
 
 **Note:** Version bump only for package @contentful/field-editor-list
