@@ -1,6 +1,6 @@
 {
   "name": "@contentful/field-editor-rich-text",
-  "version": "4.20.14",
+  "version": "5.0.0",
   "source": "./src/index.tsx",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -49,6 +49,7 @@
     "@contentful/field-editor-shared": "^3.0.0",
     "@contentful/rich-text-plain-text-renderer": "^17.0.0",
     "@contentful/rich-text-types": "^17.2.5",
+    "@emotion/css": "^11.13.5",
     "@popperjs/core": "^2.11.5",
     "@udecode/plate-basic-marks": "36.0.0",
     "@udecode/plate-break": "36.0.0",
@@ -62,7 +63,6 @@
     "@udecode/plate-table": "36.5.9",
     "@udecode/plate-trailing-block": "36.0.0",
     "constate": "^3.3.2",
-    "@emotion/css": "^11.13.5",
     "fast-deep-equal": "^3.1.3",
     "is-hotkey": "^0.2.0",
     "is-plain-obj": "^3.0.0",
