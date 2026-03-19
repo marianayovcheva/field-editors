@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [2.0.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-test-utils@1.8.0...@contentful/field-editor-test-utils@2.0.0) (2026-03-19)
+
+### chore
+
+- **\_test:** bump forma packages to v6 [TOL-3884] ([#2101](https://github.com/contentful/field-editors/issues/2101)) ([5cd0504](https://github.com/contentful/field-editors/commit/5cd0504b00ea0fc8f1d077cf84cfe7c363570713))
+
+### BREAKING CHANGES
+
+- **\_test:** bump also emotion and peerDependencies.
+
+- chore: update lock file
+
 # [1.8.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-test-utils@1.7.0...@contentful/field-editor-test-utils@1.8.0) (2026-01-22)
 
 ### Features
