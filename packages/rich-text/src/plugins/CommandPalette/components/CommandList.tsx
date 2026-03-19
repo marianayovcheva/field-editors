@@ -11,7 +11,7 @@ import {
 } from '@contentful/f36-components';
 import { Portal } from '@contentful/f36-utils';
 import { SharedQueryClientProvider } from '@contentful/field-editor-shared/react-query';
-import { cx } from 'emotion';
+import { cx } from '@emotion/css';
 
 import { PlateEditor } from '../../../internal/types';
 import { useSdkContext } from '../../../SdkProvider';
@@ -71,7 +71,7 @@ const Asset = ({ command, selectedItem }: { command: Command; selectedItem: stri
       {command.thumbnail ? (
         <img width="30" height="30" src={command.thumbnail} alt="" className={styles.thumbnail} />
       ) : (
-        <AssetIcon width="30" height="30" className={styles.thumbnail} />
+        <AssetIcon className={styles.thumbnail} />
       )}
       <span>{command.label}</span>
     </Flex>
