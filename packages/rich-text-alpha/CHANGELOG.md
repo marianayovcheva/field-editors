@@ -3,6 +3,16 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text-alpha@0.4.10...@contentful/field-editor-rich-text-alpha@0.5.0) (2026-03-20)
+
+### chore
+
+- **rich-text-alpha:** bump forma36 to v6; modify emotion import [TOL-3884] ([#2110](https://github.com/contentful/field-editors/issues/2110)) ([f87d6aa](https://github.com/contentful/field-editors/commit/f87d6aa575039828634ce3ac55debd65f0ecf218))
+
+### BREAKING CHANGES
+
+- **rich-text-alpha:** Migrate from emotion@10. to emotion/css@^11.13.4. Consumers also must be on Forma 36 v6 and React 18.3.1+
+
 ## [0.4.10](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text-alpha@0.4.9...@contentful/field-editor-rich-text-alpha@0.4.10) (2026-03-19)
 
 **Note:** Version bump only for package @contentful/field-editor-rich-text-alpha
