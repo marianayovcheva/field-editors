@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.1.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-slug@3.0.6...@contentful/field-editor-slug@3.1.0) (2026-04-07)
+
+### Features
+
+- **slug:** use configurable max length ([#2129](https://github.com/contentful/field-editors/issues/2129)) ([2aedb78](https://github.com/contentful/field-editors/commit/2aedb784844bbff772129a17c12a808b2c980e99))
+
 ## [3.0.6](https://github.com/contentful/field-editors/compare/@contentful/field-editor-slug@3.0.5...@contentful/field-editor-slug@3.0.6) (2026-03-30)
 
 **Note:** Version bump only for package @contentful/field-editor-slug
