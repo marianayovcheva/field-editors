@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.0.7](https://github.com/contentful/field-editors/compare/@contentful/field-editor-validation-errors@3.0.6...@contentful/field-editor-validation-errors@3.0.7) (2026-04-14)
+
+### Bug Fixes
+
+- react-query v4/v5 compability [] ([#2131](https://github.com/contentful/field-editors/issues/2131)) ([d77c7f0](https://github.com/contentful/field-editors/commit/d77c7f0ad000cfd14cd94ba68b1df8f4b1d9dfe1))
+
 ## [3.0.6](https://github.com/contentful/field-editors/compare/@contentful/field-editor-validation-errors@3.0.5...@contentful/field-editor-validation-errors@3.0.6) (2026-03-30)
 
 **Note:** Version bump only for package @contentful/field-editor-validation-errors

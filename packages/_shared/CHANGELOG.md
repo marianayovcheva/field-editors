@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.1.4](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@3.1.3...@contentful/field-editor-shared@3.1.4) (2026-04-14)
+
+### Bug Fixes
+
+- react-query v4/v5 compability [] ([#2131](https://github.com/contentful/field-editors/issues/2131)) ([d77c7f0](https://github.com/contentful/field-editors/commit/d77c7f0ad000cfd14cd94ba68b1df8f4b1d9dfe1))
+
 ## [3.1.3](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@3.1.2...@contentful/field-editor-shared@3.1.3) (2026-03-30)
 
 **Note:** Version bump only for package @contentful/field-editor-shared
