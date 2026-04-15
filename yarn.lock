@@ -2837,26 +2837,12 @@
     open "^8.0.5"
     ora "^5.4.0"
 
-"@contentful/app-sdk@^4.17.1", "@contentful/app-sdk@^4.29.0":
-  version "4.29.0"
-  resolved "https://registry.yarnpkg.com/@contentful/app-sdk/-/app-sdk-4.29.0.tgz#ca71dffefc493f07998597799e4c112e7f80e3e5"
-  integrity sha512-g1PHiCZGImrJq1+ctdb3leCaRrnLaj1yOSHBaibQSzNncH5M5g6zefW7Isy8LHhav5+g+0/WNjsoucBH27d7gg==
+"@contentful/app-sdk@4.54.0", "@contentful/app-sdk@^4.17.1", "@contentful/app-sdk@^4.29.0", "@contentful/app-sdk@^4.42.0", "@contentful/app-sdk@^4.45.0":
+  version "4.54.0"
+  resolved "https://registry.yarnpkg.com/@contentful/app-sdk/-/app-sdk-4.54.0.tgz#6f1dd14b8e23eccb19436797716bfcc5eea98fdd"
+  integrity sha512-jKeBeX3soas72resUNRnWP3rTurFCzZ/47I0v+6/a9JoKojYTd8eXMGMRZ8KmGuo8GIle5PNB7ublMVMJumscg==
   dependencies:
-    contentful-management ">=7.30.0"
-
-"@contentful/app-sdk@^4.42.0":
-  version "4.42.0"
-  resolved "https://registry.yarnpkg.com/@contentful/app-sdk/-/app-sdk-4.42.0.tgz#666941e1df3a6f778845b6225c08cc549b097ea4"
-  integrity sha512-Gn6Os52KeCBOZn8i8ZscS0DG+DuxYiPTjeUJHwXRz1FIRfuAvjdrP0PNxb/R58TbbgGARFFe9lO9CtTE/EONuQ==
-  dependencies:
-    contentful-management "^11.56.0"
-
-"@contentful/app-sdk@^4.45.0":
-  version "4.45.0"
-  resolved "https://registry.yarnpkg.com/@contentful/app-sdk/-/app-sdk-4.45.0.tgz#90424432ed3cd0e7a8886d1b2aef139b622077d4"
-  integrity sha512-3NCLi7B/VL17k3iMA+0hsycFn6mrDyKIE3LZPRfJjFtcFO7OVZwQ4Aysp0e2Hbatrppin3QIc8feTdg59JMNkQ==
-  dependencies:
-    contentful-management "^11.57.1"
+    contentful-management "^12.3.1"
 
 "@contentful/browserslist-config@^3.0.0":
   version "3.0.0"
@@ -10563,15 +10549,6 @@ axios@^0.26.0:
   dependencies:
     follow-redirects "^1.14.8"
 
-axios@^1.11.0:
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-1.11.0.tgz#c2ec219e35e414c025b2095e8b8280278478fdb6"
-  integrity sha512-1Lx3WLFQWm3ooKDYZD1eXmoGO9fxYQjrycfHFC8P0sCfQVXyROp0p9PFWBehewBOdCwHc+f/b8I0fMto5eSfwA==
-  dependencies:
-    follow-redirects "^1.15.6"
-    form-data "^4.0.4"
-    proxy-from-env "^1.1.0"
-
 axios@^1.12.2:
   version "1.12.2"
   resolved "https://registry.yarnpkg.com/axios/-/axios-1.12.2.tgz#6c307390136cf7a2278d09cec63b136dfc6e6da7"
@@ -10580,6 +10557,15 @@ axios@^1.12.2:
     follow-redirects "^1.15.6"
     form-data "^4.0.4"
     proxy-from-env "^1.1.0"
+
+axios@^1.13.5, axios@^1.15.0:
+  version "1.15.0"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-1.15.0.tgz#0fcee91ef03d386514474904b27863b2c683bf4f"
+  integrity sha512-wWyJDlAatxk30ZJer+GeCWS209sA42X+N5jU2jy6oHTp7ufw8uzUTVFBX9+wTfAlhiJXGS0Bq7X6efruWjuK9Q==
+  dependencies:
+    follow-redirects "^1.15.11"
+    form-data "^4.0.5"
+    proxy-from-env "^2.1.0"
 
 axios@^1.6.0, axios@^1.6.1, axios@^1.6.2:
   version "1.6.8"
@@ -12263,18 +12249,19 @@ contentful-import@^9.0.0:
     p-queue "^6.6.2"
     yargs "^17.7.2"
 
-contentful-management@11.60.4, contentful-management@^11.57.1, contentful-management@^11.60.4:
-  version "11.60.4"
-  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-11.60.4.tgz#16471806ffcad5cbb847d1a69b2c0d147f6350eb"
-  integrity sha512-sfdth9Tg6v/yH6o2NwctTXilyn6dN5ITGm4REk2FIiYgK06BqcUYvqT9KljPoL+aHjB6mE9qzarzxZHISnOXaA==
+contentful-management@12.3.0, contentful-management@^12.3.0:
+  version "12.3.0"
+  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-12.3.0.tgz#c8ee716b6175a9995d1d6f17a78ea364456dce92"
+  integrity sha512-5R66RFL8cWFhLeqU4QilgFBet5+6STNHW0loTtK8kZdVTlQ6v2SCMKGZKlk9LZZEVF6GXS8EVqRRoqqkoY5WNA==
   dependencies:
     "@contentful/rich-text-types" "^16.6.1"
-    axios "^1.12.2"
-    contentful-sdk-core "^9.0.1"
+    axios "^1.13.5"
+    contentful-sdk-core "^9.4.4"
     fast-copy "^3.0.0"
     globals "^15.15.0"
+    process "^0.11.10"
 
-contentful-management@>=7.30.0, contentful-management@^11.0.0, contentful-management@^11.0.1, contentful-management@^11.15.0, contentful-management@^11.35.1, contentful-management@^11.45.1:
+contentful-management@^11.0.0, contentful-management@^11.0.1, contentful-management@^11.15.0, contentful-management@^11.35.1, contentful-management@^11.45.1:
   version "11.52.2"
   resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-11.52.2.tgz#1392830ea0d2bef9099377dc3e3614eba26339e2"
   integrity sha512-d/7ydc4HOVKNqT789T9hL0fu4i1U1AthjQV+PfJevwZo4JyzNvh2I5wpaJUqV859bJHSNsTfV6gdtLHg9bx0bA==
@@ -12285,13 +12272,13 @@ contentful-management@>=7.30.0, contentful-management@^11.0.0, contentful-manage
     fast-copy "^3.0.0"
     globals "^15.15.0"
 
-contentful-management@^11.56.0:
-  version "11.57.1"
-  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-11.57.1.tgz#9638e4d1176833a4cddd94d464621aba6f8798a8"
-  integrity sha512-QMi8kzwbhjhAcJaBs0N2u3oGTS4X4RUyflbEH3uelZgzS4t/mO+hr0LvaBXgXQsxOwDJYf0ZlMJtdiKzx9XJSA==
+contentful-management@^11.60.4:
+  version "11.60.4"
+  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-11.60.4.tgz#16471806ffcad5cbb847d1a69b2c0d147f6350eb"
+  integrity sha512-sfdth9Tg6v/yH6o2NwctTXilyn6dN5ITGm4REk2FIiYgK06BqcUYvqT9KljPoL+aHjB6mE9qzarzxZHISnOXaA==
   dependencies:
     "@contentful/rich-text-types" "^16.6.1"
-    axios "^1.11.0"
+    axios "^1.12.2"
     contentful-sdk-core "^9.0.1"
     fast-copy "^3.0.0"
     globals "^15.15.0"
@@ -12306,6 +12293,18 @@ contentful-management@^11.66.0:
     contentful-sdk-core "^9.0.1"
     fast-copy "^3.0.0"
     globals "^15.15.0"
+
+contentful-management@^12.3.1:
+  version "12.3.1"
+  resolved "https://registry.yarnpkg.com/contentful-management/-/contentful-management-12.3.1.tgz#dc45a47740a9d5fa1ce4f3ee66a0e7d194c4b31d"
+  integrity sha512-Lnx6ieod2z88AhZwcV2kDhN5stctq+0ifflX+xepphPJ1a2RsPNonCAcySabPETuoNox8G0kXo5ebNybrPjOYw==
+  dependencies:
+    "@contentful/rich-text-types" "^16.6.1"
+    axios "^1.15.0"
+    contentful-sdk-core "^9.4.4"
+    fast-copy "^3.0.0"
+    globals "^15.15.0"
+    process "^0.11.10"
 
 contentful-management@^7.14.0:
   version "7.54.2"
@@ -12403,6 +12402,18 @@ contentful-sdk-core@^9.0.1:
     p-throttle "^6.1.0"
     process "^0.11.10"
     qs "^6.12.3"
+  optionalDependencies:
+    "@rollup/rollup-linux-x64-gnu" "^4.18.0"
+
+contentful-sdk-core@^9.4.4:
+  version "9.4.5"
+  resolved "https://registry.yarnpkg.com/contentful-sdk-core/-/contentful-sdk-core-9.4.5.tgz#dcb383dc00630d019b4367d3c7079ca6e4c93d11"
+  integrity sha512-8eGTMO11LXFAiosaiV38bjvW6cjoQFtNE38pNtVilZTXpmGFinClljihH0eriv11Ispd4q82TqtsXMJPYD/C+A==
+  dependencies:
+    fast-copy "^3.0.2"
+    lodash "^4.17.23"
+    process "^0.11.10"
+    qs "^6.15.0"
   optionalDependencies:
     "@rollup/rollup-linux-x64-gnu" "^4.18.0"
 
@@ -15307,7 +15318,7 @@ focus-lock@^1.3.6:
   dependencies:
     tslib "^2.0.3"
 
-follow-redirects@^1.0.0, follow-redirects@^1.14.0, follow-redirects@^1.14.8, follow-redirects@^1.15.6:
+follow-redirects@^1.0.0, follow-redirects@^1.14.0, follow-redirects@^1.14.8, follow-redirects@^1.15.11, follow-redirects@^1.15.6:
   version "1.16.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.16.0.tgz#28474a159d3b9d11ef62050a14ed60e4df6d61bc"
   integrity sha512-y5rN/uOsadFT/JfYwhxRS5R7Qce+g3zG97+JrtFZlC9klX/W5hD7iiLzScI4nZqUS7DNUdhPgw4xI8W2LuXlUw==
@@ -15408,6 +15419,17 @@ form-data@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.4.tgz#784cdcce0669a9d68e94d11ac4eea98088edd2c4"
   integrity sha512-KrGhL9Q4zjj0kiUt5OO4Mr/A/jlI2jDYs5eHBpYHPcBEVSiipAvn2Ko2HnPe20rmcuuvMHNdZFp+4IlGTMF0Ow==
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.8"
+    es-set-tostringtag "^2.1.0"
+    hasown "^2.0.2"
+    mime-types "^2.1.12"
+
+form-data@^4.0.5:
+  version "4.0.5"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-4.0.5.tgz#b49e48858045ff4cbf6b03e1805cebcad3679053"
+  integrity sha512-8RipRLol37bNs2bhoV67fiTEvdTrbMUYcFTiy3+wuuOnUog2QBHCZWXDRijWQfAkhBj2Uf5UnVaiWwA5vdd82w==
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.8"
@@ -19745,7 +19767,7 @@ lodash.upperfirst@^4.3.1:
   resolved "https://registry.yarnpkg.com/lodash.upperfirst/-/lodash.upperfirst-4.3.1.tgz#1365edf431480481ef0d1c68957a5ed99d49f7ce"
   integrity sha512-sReKOYJIJf74dhJONhU4e0/shzi1trVbSWDOhKYE5XV2O+H7Sb2Dihwuc7xWxVl+DgFPyTqIN3zMfT9cq5iWDg==
 
-lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.7.0:
+lodash@^4.17.13, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.17.23, lodash@^4.17.4, lodash@^4.3.0, lodash@^4.7.0:
   version "4.18.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.18.1.tgz#ff2b66c1f6326d59513de2407bf881439812771c"
   integrity sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q==
@@ -23039,6 +23061,11 @@ proxy-from-env@^1.1.0:
   resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-1.1.0.tgz#e102f16ca355424865755d2c9e8ea4f24d58c3e2"
   integrity sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==
 
+proxy-from-env@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/proxy-from-env/-/proxy-from-env-2.1.0.tgz#a7487568adad577cfaaa7e88c49cab3ab3081aba"
+  integrity sha512-cJ+oHTW1VAEa8cJslgmUZrc+sjRKgAKl3Zyse6+PV38hZe/V6Z14TbCuXcan9F9ghlz4QrFr2c92TNF82UkYHA==
+
 ps-tree@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/ps-tree/-/ps-tree-1.2.0.tgz#5e7425b89508736cdd4f2224d028f7bb3f722ebd"
@@ -23123,6 +23150,13 @@ qs@^6.12.3, qs@^6.9.4, qs@~6.14.0:
   version "6.14.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.14.0.tgz#c63fa40680d2c5c941412a0e899c89af60c0a930"
   integrity sha512-YWWTjgABSKcvs/nWBi9PycY/JiPJqOD4JA6o9Sej2AtvSGarXxKC3OQSk4pAarbdQlKAh5D4FCQkJNkW+GAn3w==
+  dependencies:
+    side-channel "^1.1.0"
+
+qs@^6.15.0:
+  version "6.15.1"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.15.1.tgz#bdb55aed06bfac257a90c44a446a73fba5575c8f"
+  integrity sha512-6YHEFRL9mfgcAvql/XhwTvf5jKcOiiupt2FiJxHkiX1z4j7WL8J/jRHYLluORvc1XxB5rV20KoeK00gVJamspg==
   dependencies:
     side-channel "^1.1.0"
 
