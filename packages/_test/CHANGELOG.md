@@ -3,6 +3,74 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-test-utils@2.0.1...@contentful/field-editor-test-utils@3.0.0) (2026-04-15)
+
+### Features
+
+- update contentful-management to v12 [DX-913] ([#2119](https://github.com/contentful/field-editors/issues/2119)) ([5a8b9e1](https://github.com/contentful/field-editors/commit/5a8b9e1119873c771db26ee99a00f15e5366e459))
+
+### BREAKING CHANGES
+
+- Drop support for Node < 22. Minimum supported Node version is now 22.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- chore: sync yarn.lock with main and pin app-sdk to v12-compatible release
+
+* Pull latest yarn.lock from master
+* Update @contentful/app-sdk resolution from 4.53.1 to 4.53.1-alpha.1
+  (stable 4.53.1 depends on CMA ^11.72.1; alpha.1 depends on CMA 12.0.0-new-beta.16)
+* Re-run yarn install to reconcile lockfile
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- chore: bump contentful-management to 12.3.0
+
+Update contentful-management from 12.0.0 to 12.3.0 across all 7
+dependent packages and the root devDependency.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- fix: add explicit EntryProps annotation to resolve TS2742 in fetchEntries
+
+TypeScript could not name the inferred return type of fetchEntries without
+referencing @contentful/app-sdk/node_modules/contentful-management (app-sdk
+bundles its own CMA). Explicitly annotating the map callback param with
+EntryProps from the top-level contentful-management import resolves this.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- chore: resolve @contentful/app-sdk lockfile entry from npm instead of GitHub Packages
+
+Re-resolve app-sdk from registry.yarnpkg.com so the lockfile no longer
+requires GitHub Packages auth to install. The package is available on
+the public npm registry and CI no longer configures a GitHub Packages token
+in the yarn_install step.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- chore: migrate contentful-management/types imports to contentful-management
+
+In CMA v12 the /types subpath is no longer necessary — all types are
+exported from the root entrypoint. Aligns with changes from chore/cma-v12
+(Tyler Pina) which were verified passing.
+
+Also fix trailing commas in useLocalePublishStatus.spec.tsx to satisfy
+the linter.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
+- Revert "feat: bump node engines to >=22 and CI to Node 24 LTS [DX-913]"
+
+This reverts commit 36a5ffbbb7e0219b892c071ccbca67f3cb75743f.
+
+- fix: bump @contentful/app-sdk to stable v12-compatible release (4.54.0)
+
+Replaces the alpha resolution (4.53.1-alpha.1) now that 4.54.0 has
+shipped with contentful-management ^12.3.1 as a stable release.
+
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+
 ## [2.0.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-test-utils@2.0.0...@contentful/field-editor-test-utils@2.0.1) (2026-04-14)
 
 ### Bug Fixes
