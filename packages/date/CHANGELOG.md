@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.10](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.9...@contentful/field-editor-date@2.0.10) (2026-04-16)
+
+### Bug Fixes
+
+- drop momnent in date editor [] ([#2133](https://github.com/contentful/field-editors/issues/2133)) ([33e59d9](https://github.com/contentful/field-editors/commit/33e59d93c4e999da7d339db4b2581bb7d0de9f51))
+
 ## [2.0.9](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.8...@contentful/field-editor-date@2.0.9) (2026-04-15)
 
 **Note:** Version bump only for package @contentful/field-editor-date
