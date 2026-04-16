@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.11](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.10...@contentful/field-editor-date@2.0.11) (2026-04-16)
+
+### Bug Fixes
+
+- **date:** crash when rendering DateEditor with midnight in 24h mode ([#2137](https://github.com/contentful/field-editors/issues/2137)) ([bcad6fe](https://github.com/contentful/field-editors/commit/bcad6fe3b115af91692f12adbc7ef9a1efb76347))
+
 ## [2.0.10](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.9...@contentful/field-editor-date@2.0.10) (2026-04-16)
 
 ### Bug Fixes
