@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.1.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text@6.0.0...@contentful/field-editor-rich-text@6.1.0) (2026-04-20)
+
+### Features
+
+- [TOL-515] Add embeds as last element ([#2138](https://github.com/contentful/field-editors/issues/2138)) ([d3c6ef4](https://github.com/contentful/field-editors/commit/d3c6ef4f74198818433154e7752d44c8a4fc9aa8))
+
 # [6.0.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text@5.0.9...@contentful/field-editor-rich-text@6.0.0) (2026-04-15)
 
 ### Features
