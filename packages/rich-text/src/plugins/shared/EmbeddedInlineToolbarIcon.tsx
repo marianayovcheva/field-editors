@@ -45,7 +45,9 @@ export function EmbeddedInlineToolbarIcon({
   async function handleClick(event) {
     event.preventDefault();
 
-    if (!editor) return;
+    if (!editor) {
+      return;
+    }
 
     onClose();
 
