@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.12](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.11...@contentful/field-editor-date@2.0.12) (2026-04-21)
+
+### Bug Fixes
+
+- **date:** correct 24h time snap-back and timezone date shift [ES-141][ES-143][ES-145] ([#2139](https://github.com/contentful/field-editors/issues/2139)) ([8900b33](https://github.com/contentful/field-editors/commit/8900b33808d213b3d45ca06af0586752b65dcc14))
+
 ## [2.0.11](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.10...@contentful/field-editor-date@2.0.11) (2026-04-16)
 
 ### Bug Fixes
