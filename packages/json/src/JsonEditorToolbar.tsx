@@ -1,30 +1,26 @@
 import * as React from 'react';
 
-import { Button } from '@contentful/f36-components';
+import { Button, Flex } from '@contentful/f36-components';
+import { ArrowUUpLeftIcon, ArrowUUpRightIcon } from '@contentful/f36-icons';
 import tokens from '@contentful/f36-tokens';
 import { css } from '@emotion/css';
 
 const styles = {
+  // Visually center the arrow icon with the button text
+  arrowButton: css({
+    '& > span:first-child': {
+      paddingBottom: '2px',
+    },
+  }),
   toolbar: css({
     display: 'flex',
     alignItems: 'center',
     padding: tokens.spacingXs,
     justifyContent: 'space-between',
     backgroundColor: tokens.gray100,
-    border: `1px solid ${tokens.gray200}`,
-    borderTopLeftRadius: tokens.borderRadiusSmall,
-    borderTopRightRadius: tokens.borderRadiusSmall,
-    borderBottom: 'none',
-  }),
-  title: css({
-    fontFamily: tokens.fontStackPrimary,
-    fontSize: tokens.fontSizeM,
-    color: tokens.gray600,
-  }),
-  actions: css({
-    button: {
-      marginLeft: tokens.spacingS,
-    },
+    border: `1px solid ${tokens.gray400}`,
+    borderTopLeftRadius: tokens.borderRadiusMedium,
+    borderTopRightRadius: tokens.borderRadiusMedium,
   }),
 };
 
@@ -38,10 +34,11 @@ type JsonEditorToolbarProps = {
 export function JsonEditorToolbar(props: JsonEditorToolbarProps) {
   return (
     <div className={styles.toolbar}>
-      <div className={styles.title}>JSON Editor</div>
-      <div className={styles.actions}>
+      <Flex alignItems="center">
         <Button
-          variant="secondary"
+          className={styles.arrowButton}
+          variant="transparent"
+          startIcon={<ArrowUUpLeftIcon size="small" />}
           size="small"
           isDisabled={props.isUndoDisabled}
           testId="json-editor-undo"
@@ -52,8 +49,10 @@ export function JsonEditorToolbar(props: JsonEditorToolbarProps) {
           Undo
         </Button>
         <Button
-          variant="secondary"
+          className={styles.arrowButton}
+          variant="transparent"
           size="small"
+          startIcon={<ArrowUUpRightIcon size="small" />}
           isDisabled={props.isRedoDisabled}
           testId="json-editor-redo"
           onClick={() => {
@@ -62,7 +61,7 @@ export function JsonEditorToolbar(props: JsonEditorToolbarProps) {
         >
           Redo
         </Button>
-      </div>
+      </Flex>
     </div>
   );
 }
