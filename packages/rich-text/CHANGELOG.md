@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [6.2.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text@6.1.1...@contentful/field-editor-rich-text@6.2.0) (2026-04-22)
+
+### Features
+
+- update `json` editor styles & align icons [SPA-4125] ([#2140](https://github.com/contentful/field-editors/issues/2140)) ([2b13b38](https://github.com/contentful/field-editors/commit/2b13b3800ecb2b0c95cd7cb7994a90ce2fc82492)), closes [#2142](https://github.com/contentful/field-editors/issues/2142)
+
 ## [6.1.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-rich-text@6.1.0...@contentful/field-editor-rich-text@6.1.1) (2026-04-22)
 
 **Note:** Version bump only for package @contentful/field-editor-rich-text

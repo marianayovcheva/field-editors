@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.1.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-json@4.0.8...@contentful/field-editor-json@4.1.0) (2026-04-22)
+
+### Features
+
+- update `json` editor styles & align icons [SPA-4125] ([#2140](https://github.com/contentful/field-editors/issues/2140)) ([2b13b38](https://github.com/contentful/field-editors/commit/2b13b3800ecb2b0c95cd7cb7994a90ce2fc82492)), closes [#2142](https://github.com/contentful/field-editors/issues/2142)
+
 ## [4.0.8](https://github.com/contentful/field-editors/compare/@contentful/field-editor-json@4.0.7...@contentful/field-editor-json@4.0.8) (2026-04-15)
 
 **Note:** Version bump only for package @contentful/field-editor-json
