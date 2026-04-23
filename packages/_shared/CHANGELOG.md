@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.1.0...@contentful/field-editor-shared@4.1.1) (2026-04-23)
+
+### Bug Fixes
+
+- **shared:** replace require with import ([#2144](https://github.com/contentful/field-editors/issues/2144)) ([865ea89](https://github.com/contentful/field-editors/commit/865ea8918728a05d4d2afd66ad741f852ee8ea4a))
+
 # [4.1.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.0.0...@contentful/field-editor-shared@4.1.0) (2026-04-23)
 
 ### Features

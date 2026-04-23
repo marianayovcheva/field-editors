@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.15](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.14...@contentful/field-editor-date@2.0.15) (2026-04-23)
+
+### Bug Fixes
+
+- **date:** default timepicker to 00:00 instead of 12:00 when no value ([#2148](https://github.com/contentful/field-editors/issues/2148)) ([dd40ddf](https://github.com/contentful/field-editors/commit/dd40ddf5af46765743424ed2883d91180293572e))
+
 ## [2.0.14](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.13...@contentful/field-editor-date@2.0.14) (2026-04-23)
 
 **Note:** Version bump only for package @contentful/field-editor-date
