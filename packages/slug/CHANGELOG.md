@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [3.2.3](https://github.com/contentful/field-editors/compare/@contentful/field-editor-slug@3.2.2...@contentful/field-editor-slug@3.2.3) (2026-04-23)
+
+### Bug Fixes
+
+- **slug:** don't convert $ to usd ([#2147](https://github.com/contentful/field-editors/issues/2147)) ([9df6d27](https://github.com/contentful/field-editors/commit/9df6d27c77614cbae15930dafab4f0d8a9a2c3a2))
+
 ## [3.2.2](https://github.com/contentful/field-editors/compare/@contentful/field-editor-slug@3.2.1...@contentful/field-editor-slug@3.2.2) (2026-04-23)
 
 **Note:** Version bump only for package @contentful/field-editor-slug

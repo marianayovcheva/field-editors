@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [8.2.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-reference@8.1.1...@contentful/field-editor-reference@8.2.0) (2026-04-23)
+
+### Features
+
+- remove moment.js from reference and rich-text packages [HK-000] ([#2146](https://github.com/contentful/field-editors/issues/2146)) ([5d33a30](https://github.com/contentful/field-editors/commit/5d33a308c3a338e30573a0b2de444ce10a498ce3))
+
 ## [8.1.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-reference@8.1.0...@contentful/field-editor-reference@8.1.1) (2026-04-23)
 
 **Note:** Version bump only for package @contentful/field-editor-reference
