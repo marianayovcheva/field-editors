@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [2.0.16](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.15...@contentful/field-editor-date@2.0.16) (2026-04-28)
+
+### Bug Fixes
+
+- **date:** parse am/pm without space separator in timepicker ([#2150](https://github.com/contentful/field-editors/issues/2150)) ([ac09fa7](https://github.com/contentful/field-editors/commit/ac09fa781572abf232a40a1e66b6032da13f4ea8))
+
 ## [2.0.15](https://github.com/contentful/field-editors/compare/@contentful/field-editor-date@2.0.14...@contentful/field-editor-date@2.0.15) (2026-04-23)
 
 ### Bug Fixes
