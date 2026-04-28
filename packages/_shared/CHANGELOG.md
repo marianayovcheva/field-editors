@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [4.1.2](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.1.1...@contentful/field-editor-shared@4.1.2) (2026-04-28)
+
+### Bug Fixes
+
+- **shared:** queryClient detects react-query v4/v5 using setLogger ([#2149](https://github.com/contentful/field-editors/issues/2149)) ([55bfdfd](https://github.com/contentful/field-editors/commit/55bfdfdbc4d1dd0ac2db08805a4232055f9d658f))
+
 ## [4.1.1](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.1.0...@contentful/field-editor-shared@4.1.1) (2026-04-23)
 
 ### Bug Fixes
