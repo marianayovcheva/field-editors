@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [4.2.0](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.1.2...@contentful/field-editor-shared@4.2.0) (2026-04-30)
+
+### Features
+
+- **shared:** widen entity-shaped sys params ([#2152](https://github.com/contentful/field-editors/issues/2152)) ([f0fe9c8](https://github.com/contentful/field-editors/commit/f0fe9c8f81d84163968f3ad7c5368ecf2306c188))
+
 ## [4.1.2](https://github.com/contentful/field-editors/compare/@contentful/field-editor-shared@4.1.1...@contentful/field-editor-shared@4.1.2) (2026-04-28)
 
 ### Bug Fixes
